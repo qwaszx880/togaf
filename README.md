@@ -35,6 +35,7 @@ For every module: **preview → study → retrieve → apply → review**. Read 
 
 ## Quick links
 
+- [Build or download the complete, reader-ready EPUB](epub/README.md)
 - [Course orientation and master index](00-start-here/README.md)
 - [Foundation course](01-foundation/README.md)
 - [Practitioner course](02-practitioner/README.md)
