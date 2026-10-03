@@ -1,0 +1,31 @@
+name: Build EPUB
+
+on:
+  pull_request:
+  push:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the course
+        uses: actions/checkout@v4
+
+      - name: Validate the documentation
+        run: python3 scripts/check_docs.py
+
+      - name: Build the EPUB
+        run: python3 scripts/build_epub.py
+
+      - name: Check the EPUB archive
+        run: unzip -t epub/togaf-hands-on-guide.epub
+
+      - name: Upload the EPUB
+        uses: actions/upload-artifact@v4
+        with:
+          name: togaf-hands-on-guide
+          path: epub/togaf-hands-on-guide.epub
+          if-no-files-found: error

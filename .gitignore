@@ -1,0 +1,2 @@
+# EPUB is a ZIP-based binary format. Build it locally or download the CI artifact.
+/epub/*.epub
